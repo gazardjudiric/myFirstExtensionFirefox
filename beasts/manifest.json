@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Borderify",
+    "version": "1.0",
+
+    "description": "Ajoute une bordure rouge sur l'ensemble des pages web mozilla.org",
+
+    "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/beastify",
+
+    "icons": {
+        "48": "icons/beasts-48.png"
+    },
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/beats-32.png",
+        "default_title": "Beastify",
+        "default_popup": "popup/choose_beast.html"
+    },
+    
+    "web_accessible_resources": [
+        "/beasts/frog.jpg",
+        "/beasts/turtle.jpg",
+        "/beasts/snake.jpg"
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.mozilla.org/*"],
+            "js": ["borderify.js"]
+        }
+    ]
+}
